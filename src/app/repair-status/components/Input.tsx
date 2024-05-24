@@ -1,9 +1,8 @@
 interface InputProps {
   placeholder: string;
-  state: string | undefined;
   setStateFunc: ChangeEventHandler<HTMLInputElement>;
 }
-const Input: FC<InputProps> = ({ placeholder, state, setStateFunc }) => {
+const Input: FC<InputProps> = ({ placeholder, setStateFunc }) => {
   return (
     <div className="flex flex-col w-full">
       <input
