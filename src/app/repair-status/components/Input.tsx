@@ -1,3 +1,5 @@
+import { ChangeEventHandler, FC } from "react";
+
 interface InputProps {
   placeholder: string;
   setStateFunc: ChangeEventHandler<HTMLInputElement>;
