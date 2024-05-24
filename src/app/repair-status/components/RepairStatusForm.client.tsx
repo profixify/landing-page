@@ -10,12 +10,10 @@ const RepairStatusFormClient = () => {
     <div className="mt-5 flex gap-2">
       <Input
         placeholder="Repair Code"
-        state={repairCode}
         setStateFunc={(e) => setRepairCode(e.currentTarget.value)}
       />
       <Input
         placeholder="Phone Number"
-        state={phoneNumber}
         setStateFunc={(e) => setPhoneNumber(e.currentTarget.value)}
       />
       <button
