@@ -8,7 +8,11 @@ const config: Config = {
     "./src/core/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        xs: "350px",
+      },
+    },
   },
   plugins: [],
 };
