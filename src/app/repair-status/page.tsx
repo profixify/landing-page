@@ -1,8 +1,8 @@
 import RepairStatusFormClient from "@/app/repair-status/components/RepairStatusForm.client";
 
-const RepairStatus = () => {
+const RepairStatusPage = () => {
   return (
-    <div className="h-[calc(100vh-5rem)] flex items-center justify-center">
+    <div className="h-[calc(100vh-5rem)] flex items-center justify-center px-5">
       <div className="text-center text-white flex justify-center">
         <div className="flex flex-col gap-2 max-w-2xl">
           <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
@@ -26,4 +26,4 @@ const RepairStatus = () => {
   );
 };
 
-export default RepairStatus;
+export default RepairStatusPage;
