@@ -8,7 +8,7 @@ import { TimelineProps } from "./types";
 
 const Timeline: FC<TimelineProps> = ({ statuses }) => {
   return (
-    <div className="bg-black h-full p-5 px-10 rounded-lg">
+    <div className="dark:bg-slate-950 bg-slate-100 h-full p-5 px-10 rounded-lg">
       <Heading createdDate={statuses[0]?.createdAt} />
       <div className="flex flex-col">
         {statuses?.map((repairStatus, index) => (

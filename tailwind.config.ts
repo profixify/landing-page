@@ -7,6 +7,7 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/core/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       screens: {
@@ -16,4 +17,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

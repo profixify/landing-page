@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import "./globals.css";
 import Navbar from "@/core/layouts/Navbar";
+import { ThemeProvider } from "@/core/theme";
+import type { Metadata } from "next";
+import { Toaster } from "sonner";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Profixify",
@@ -13,10 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white w-screen">
-        <Navbar />
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="dark:bg-slate-950 bg-slate-100">
+        <ThemeProvider attribute="class" enableSystem>
+          <Navbar />
+          {children}
+          <Toaster richColors />
+        </ThemeProvider>
       </body>
     </html>
   );

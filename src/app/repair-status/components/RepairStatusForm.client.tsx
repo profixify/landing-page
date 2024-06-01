@@ -5,29 +5,31 @@ import { BaseRepairStatus } from "@/components/Timeline/types";
 import { cn } from "@/core/utils";
 import { useState } from "react";
 import { MdSearch } from "react-icons/md";
+import { toast } from "sonner";
 import { Drawer } from "vaul";
 
 const RepairStatusFormClient = () => {
-  const [repairCode, setRepairCode] = useState<string | undefined>("E3U1B4hk");
-  const [phoneNumber, setPhoneNumber] = useState<string | undefined>(
-    "+905511111111"
-  );
+  const [repairCode, setRepairCode] = useState<string | undefined>(undefined);
+  const [phoneNumber, setPhoneNumber] = useState<string | undefined>(undefined);
   const [repairStatuses, setRepairStatuses] = useState<BaseRepairStatus[]>([]);
+
   const fetchData = async () => {
     if (repairCode && phoneNumber) {
       const url = encodeURI(
-        `http://localhost:8000/api/repairs/check-status/${repairCode}/${phoneNumber}/`
+        `${process.env.NEXT_PUBLIC_API_URL}/repairs/check-status/${repairCode}/${phoneNumber}/`
       );
       const response = await fetch(url);
-      console.log("response", response);
       if (response.status === 200) {
         const data = await response.json();
-        if (data) {
-          setRepairStatuses(data);
-        }
+        setRepairStatuses(data);
+      } else {
+        toast.error("Not found record");
+        setPhoneNumber(undefined);
+        setRepairCode(undefined);
       }
     }
   };
+
   return (
     <>
       <div className="flex flex-col">
@@ -49,19 +51,19 @@ const RepairStatusFormClient = () => {
                 disabled={!repairCode && !phoneNumber}
                 className={cn(
                   repairCode && phoneNumber
-                    ? "bg-green-600 hover:bg-green-500"
-                    : "bg-zinc-600 cursor-default",
+                    ? "bg-green-700 hover:bg-green-600"
+                    : "dark:bg-slate-300 bg-slate-700 cursor-default",
                   "transition-all duration-500 rounded-md px-2 flex justify-center items-center xs:py-2 sm:py-0"
                 )}
                 onClick={fetchData}
               >
-                <MdSearch className="xs:text-2xl lg:text-4xl" />
+                <MdSearch className="xs:text-2xl lg:text-4xl text-slate-100" />
               </button>
             </Drawer.Trigger>
             {repairStatuses.length ? (
               <Drawer.Portal>
-                <Drawer.Overlay className="fixed inset-0 bg-gray-500/20 backdrop-blur-sm z-1" />
-                <Drawer.Content className="bg-zinc-100 flex flex-col rounded-xl h-screen fixed z-2 top-0 xs:left-1/4 md:left-3/4 right-0">
+                <Drawer.Overlay className="fixed inset-0 bg-gray-500/20 backdrop-blur-sm z-30" />
+                <Drawer.Content className="bg-zinc-100 flex flex-col rounded-xl h-screen fixed z-40 top-0 xs:left-1/4 md:left-3/4 right-0">
                   <Timeline statuses={repairStatuses} />
                 </Drawer.Content>
               </Drawer.Portal>

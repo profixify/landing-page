@@ -5,10 +5,10 @@ const Pricing = () => {
     <div className="h-[calc(100vh-5rem)] flex items-center justify-center">
       <div>
         <div className="sm:flex sm:flex-col sm:align-center">
-          <h1 className="text-4xl font-extrabold text-white sm:text-center sm:text-6xl">
+          <h1 className="text-4xl font-extrabold dark:text-white text-slate-950 sm:text-center sm:text-6xl">
             Pricing Plans
           </h1>
-          <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
+          <p className="max-w-2xl m-auto mt-5 text-xl dark:text-zinc-200 text-slate-750 sm:text-center sm:text-2xl">
             Start building for free, then add a site plan to go live. Account
             plans unlock additional features.
           </p>
