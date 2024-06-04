@@ -32,8 +32,8 @@ const RepairStatusFormClient = () => {
 
   return (
     <>
-      <div className="flex flex-col">
-        <div className="mt-5 flex gap-2">
+      <div className="flex flex-col px-5">
+        <div className="mt-5 flex gap-2 xs:flex-col md:flex-row">
           <Input
             placeholder="Repair Code"
             setStateFunc={(e) => setRepairCode(e.currentTarget.value)}

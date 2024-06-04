@@ -50,23 +50,23 @@ const ProcessCard: FC<ProcessCardProps> = ({ title, description }) => {
 export default function Home() {
   return (
     <>
-      <Content className="flex flex-col items-center justify-center py-56 h-screen">
+      <Content className="flex flex-col items-center justify-center md:h-screen py-20 bg-gradient-to-b dark:from-slate-950 dark:to-blue-950">
         <h1 className="text-6xl font-semibold tracking-tighter mb-10">
           Profixify
         </h1>
-        <div className="w-7/12">
+        <div className="xs:w-full md:w-7/12">
           <TextGenerateEffect words="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Placerat vestibulum lectus mauris ultrices eros. Aliquet risus feugiat in ante metus dictum. Netus et malesuada fames ac turpis. Urna id volutpat lacus laoreet." />
         </div>
       </Content>
-      <Content className="flex flex-col justify-center items-center py-56 h-screen dark:bg-blue-950">
-        <div className="w-10/12 flex flex-col items-center">
-          <div className="rounded-lg bg-blue-200 text-blue-600 px-4 py-2 text-4xl font-light">
+      <Content className="flex flex-col justify-center items-center md:h-screen py-20 bg-gradient-to-b dark:from-blue-950 dark:to-purple-950">
+        <div className="xs:w-full md:w-10/12 flex flex-col items-center">
+          <div className="rounded-lg bg-blue-200 text-blue-600 px-4 py-2 xs:text-2xl md:text-4xl font-light">
             More Benefits
           </div>
-          <h1 className="text-6xl font-semibold tracking-tighter my-5 mb-10">
+          <h1 className="xs:text-4xl md:text-6xl font-semibold tracking-tighter my-5 mb-10 text-center">
             Profixify at your fingertips
           </h1>
-          <div className="grid grid-cols-3">
+          <div className="grid md:grid-cols-3 xs:grid-cols-1">
             <BenefitCard
               icon={<PiChartLineUpDuotone />}
               iconColor="text-purple-600"
@@ -106,26 +106,28 @@ export default function Home() {
           </div>
         </div>
       </Content>
-      <Content className="flex flex-col justify-center items-center py-56 h-screen dark:bg-purple-950">
-        <div className="rounded-lg bg-purple-200 text-purple-600 px-4 py-2 text-4xl font-light">
-          Our Process
-        </div>
-        <h1 className="text-6xl font-semibold tracking-tighter my-5 mb-10">
-          How does it work?
-        </h1>
-        <div className="grid grid-cols-3">
-          <ProcessCard
-            title="Create account"
-            description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing."
-          />
-          <ProcessCard
-            title="Select a plan"
-            description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing."
-          />
-          <ProcessCard
-            title="Start managing"
-            description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing."
-          />
+      <Content className="flex flex-col justify-center items-center md:h-screen bg-gradient-to-b dark:from-purple-950 dark:to-slate-950">
+        <div className="xs:w-full md:w-10/12 flex flex-col items-center">
+          <div className="rounded-lg bg-purple-200 text-purple-600 px-4 py-2 xs:text-2xl md:text-4xl font-light">
+            Our Process
+          </div>
+          <h1 className="xs:text-4xl md:text-6xl font-semibold tracking-tighter my-5 text-center">
+            How does it work?
+          </h1>
+          <div className="grid xs:grid-cols-1 md:grid-cols-3 place-items-center">
+            <ProcessCard
+              title="Create account"
+              description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing."
+            />
+            <ProcessCard
+              title="Select a plan"
+              description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing."
+            />
+            <ProcessCard
+              title="Start managing"
+              description="Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing."
+            />
+          </div>
         </div>
       </Content>
     </>
