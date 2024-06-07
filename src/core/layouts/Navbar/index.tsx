@@ -36,7 +36,7 @@ const Navbar = () => {
           )}
         >
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
-            <NavbarLink href="/pricing" title="Pricing" />
+            {/* <NavbarLink href="/pricing" title="Pricing" /> */}
             <NavbarLink href="/repair-status" title="Repair Status" />
             <NavbarLink href="/dashboard" title="Demo" />
             <span className="xs:hidden sm:block">
